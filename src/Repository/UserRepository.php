@@ -15,18 +15,12 @@ class UserRepository
 
     public function save(User $user): User
     {
-        $this->connection->beginTransaction();
-
-        try {
-            $stmt = $this->connection->prepare("INSERT INTO users (id, name, password) VALUES (?, ?, ?)");
-            $stmt->execute([
-                $user->getId(),
-                $user->getName(),
-                $user->getPassword(),
-            ]);
-        } finally {
-            $this->connection->commit();
-        }
+        $stmt = $this->connection->prepare("INSERT INTO users (id, name, password) VALUES (?, ?, ?)");
+        $stmt->execute([
+            $user->getId(),
+            $user->getName(),
+            $user->getPassword(),
+        ]);
 
         return $user;
     }
@@ -54,12 +48,6 @@ class UserRepository
 
     public function deleteAll(): void
     {
-        $this->connection->beginTransaction();
-
-        try {
-            $this->connection->exec("DELETE FROM users");
-        } finally {
-            $this->connection->commit();
-        }
+        $this->connection->exec("DELETE FROM users");
     }
 }
