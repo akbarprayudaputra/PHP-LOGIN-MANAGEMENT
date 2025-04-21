@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Akbarprayuda\\PhpMvc\\Tests\\RegexTest::testRegex":0.005}}
+{"version":1,"defects":[],"times":{"Akbarprayuda\\PhpMvc\\Tests\\RegexTest::testRegex":0.005,"Akbarprayuda\\PhpMvc\\Config\\DatabaseTest::testGetConnection":0.015,"Akbarprayuda\\PhpMvc\\Config\\DatabaseTest::testGetConnectionSingleton":0.034}}
