@@ -2,6 +2,7 @@
 
 namespace Akbarprayuda\PhpMvc\Config;
 
-interface Middleware {
+interface Middleware
+{
     public function before(): void;
 }

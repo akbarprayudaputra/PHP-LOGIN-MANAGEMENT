@@ -1,13 +1,15 @@
 <?php
 
-namespace Akbarprayuda\PhpMvc\Config;
+namespace Akbarprayuda\PhpMvc\Test\Config;
 
+use Akbarprayuda\PhpMvc\Config\Database;
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertSame;
 
-class DatabaseTest extends TestCase {
-    public function testGetConnection(): void 
+class DatabaseTest extends TestCase
+{
+    public function testGetConnection(): void
     {
         $connection = Database::getConnection();
 
