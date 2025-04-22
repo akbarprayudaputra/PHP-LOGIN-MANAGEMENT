@@ -9,7 +9,7 @@ use Akbarprayuda\PhpMvc\Repository\SessionRepository;
 use Akbarprayuda\PhpMvc\Repository\UserRepository;
 use Akbarprayuda\PhpMvc\Service\SessionService;
 
-class AuthMiddleware implements Middleware
+class GuestMiddleware implements Middleware
 {
     private SessionService $sessionService;
 
@@ -24,7 +24,7 @@ class AuthMiddleware implements Middleware
     {
         $user = $this->sessionService->current();
 
-        if ($user === null) {
+        if ($user !== null) {
             View::redirect("/");
             exit();
         }
